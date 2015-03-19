@@ -186,7 +186,7 @@ Die sogenannte \textit{Massenzahl} ist nun die Summe der beiden Zahlen: $A=N+Z$.
 
 Da Atomkerne sehr dicht gepackt sind und darin (je nach Ordnungszahl) viele positiv geladene Protonen sind, kann man schon mit grundlegenden Kenntnissen der Elektrostatik sagen, dass dies instabil sein sollte.
 In der Realität sind jedoch auch Elemente mit höherer Ordnungszahl vorhanden, so dass es eine Kraft geben muss, welche zumindest auf kurze Distanzen die enormen elektromagnetischen Kräfte überwinden kann.
-Die hierfür zuständigen Kräfte sind die starke und die schwache Kernkraft.
+Die hierfür zuständigen Kräfte sind nach \cite[S. 928]{gerthsen} die starke und die schwache Kernkraft.
 Insbesondere die starke Wechselwirkung, welche als Wechselwirkungsteilchen das Gluon besitzt und nur eine Reichweite von $\approx10^{-15}\si\metre$ hat, ist maßgeblich an der Stabilität der Atome beteiligt.
 Werden die Radien der Atomkerne jedoch zu groß, so können die elektrostatischen Kräfte die Überhand nehmen und die Atomkerne regelrecht in zwei Teile zerreißen.
 Dieser Vorgang nennt sich Kernspaltung.
@@ -200,14 +200,36 @@ Der Zerfall kann auf drei Weisen stattfinden:
 \begin{itemize}
 \item $\alpha$-Zerfall, bei dem Heliumkerne (\chemical{^4_2He^{2+}}) emittiert werden
 \item $\beta$-Zerfall, bei dem entweder Elektronen ($e^-$ bei dem $\beta^-$) oder Positronen ($e^+$ bei dem $\beta^+$) ausgesandt werden
-\item $\gamma$-Zerfall, bei dem energiereiche Photonen (Röntgenstrahlung) ausgesand wird
+\item $\gamma$-Zerfall, bei dem energiereiche Photonen (Röntgenstrahlung) ausgesand wird.
 \end{itemize}
+
+Betrachtet man nun eine größere Menge radioaktiver Substanz und zeichnet die Zerfälle auf, so stellt sich heraus, dass man die Verlaufskurve vorhersagen kann.
+Dies ist jedoch nicht auf einzelne Atome übertragbar, da es sich um statistische Vorgänge handelt, welche nicht vorhersehbar sind.
+Bei diesen kann man nur eine Zeitspanne angeben, innerhalb derer sie mit einer Wahrscheinlichkeit von 50\% zerfallen sind.
+Diese Zeit nennt man Halbwertszeit.
+
+Man kann nun die Ratengleichung aufstellen:
+\begin{align}
+	-\frac{dN}{dt} &=\lambda N\\
+	\Rightarrow N(t)&=N_0\cdot e^{-\lambda t}\quad .
+\end{align}
+
+Die Halbwertszeit $T$ ist definiert über $N(T)=\frac{1}{2}N_0$ und damit folglich
+\begin{align}
+	T&=\frac{\ln 2}{\lambda}\\
+	\Rightarrow N(t)&=N_0\cdot e^{-\frac{\ln 2}{T} t}\quad .
+\end{align}
 
 \subsection{Silberisotope}
 Die beiden Isotope \chemical{^{107}Ag} und \chemical{^{109}Ag} sind stabil.
-Sie können jedoch durch Anregung mit einem Neutron in die Isotope \chemical{^{108}Ag} und \chemical{^{110}Ag} umgewand werden.
-Diese sind jedoch $\beta^-$-Strahler, welche beim Zerfall auch $\gamma$-Strahlung aussenden.
+Sie können jedoch durch Anregung mit einem Neutron in die Isotope \chemical{^{108}Ag} und \chemical{^{110}Ag} umgewand werden wobei ein Photon ausgesandt wird.
+Diese sind jedoch $\beta^-$-Strahler.
 Diese widerum kann in einem \textsc{Geiger-Müller}-Zählrohr gemessen werden.
+\begin{align*}
+	\text{\chemical{^{107}_{47}Ag+n \,\rightarrow\, ^{108}_{47}Ag}} + \gamma\\
+	\text{\chemical{^{109}_{47}Ag+n\,\rightarrow \,^{110}_{47}Ag}} + \gamma
+\end{align*}
+Die entstandenen Isotope sind jedoch beide instabile $\beta$-Strahler, welche Halbwertszeiten von $T_\text{\chemical{^{108}_{47}Ag}}=143\si\second$ und $T_\text{\chemical{^{110}_{47}Ag}}=24.6\si\second$ besitzen.
 
 
                                                                                                                                                                       
@@ -225,11 +247,18 @@ Nun muss gewartet werden, bis die Zählrate pro Sekunde ungefähr konstant ist.
 Dies tritt bei einem Wert von ungefähr einem bis zwei Zerfällen pro Sekunde ein.
 Bei der Aufzeichnung am Computer ist darauf zu achten, dass an der y-Achse des Plots vom Auswertungsprogramm zwar steht "`Zerfälle pro 5 sec"', es wird jedoch über die Periode von 5 Sekunden gemittelt und der heruntergerechnete Wert auf eine Sekunde wird dargestellt.
 
-In den beiden Versuchsräumen sollte nicht gegessen werden und nach der Durchführung sind die Hände zu waschen.
+In den beiden Versuchsräumen sollte nicht gegessen werden und nach der Durchführung sind die Hände sorgfältig zu waschen.
 
 
 \section{Auswertung}
 \label{sec:auswertung}
+
+\begin{figure}[h]
+	\centering
+	\input{null}
+	\caption{Nullrate}
+	\label{fig:null}
+\end{figure}
 
 \begin{figure}[h]
 \centering
@@ -258,6 +287,7 @@ In den beiden Versuchsräumen sollte nicht gegessen werden und nach der Durchfü
 \caption{8 Minuten Aktivierung}
 \label{fig:8min}
 \end{figure}
+
 
 \begin{table}
 \centering

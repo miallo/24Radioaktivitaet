@@ -10,7 +10,7 @@ set fit logfile 'log1min.log'
 fit f(x) '1min.dat' via a,b,c
 p '1min.dat' t'$1\si\minute$ Aktivierung', f(x) t'Fit'
 set output
-
+!epstopdf 1min.eps
 
 set output '2min.tex'
 
@@ -22,7 +22,7 @@ set fit logfile 'log2min.log'
 fit g(x) '2min.dat' via d,e,f
 p '2min.dat' t'$2\si\minute$ Aktivierung', g(x) t'Fit'
 set output
-
+!epstopdf 2min.eps
 
 set output '4min.tex'
 
@@ -34,7 +34,7 @@ set fit logfile 'log4min.log'
 fit h(x) '4min.dat' via g,h,i
 p '4min.dat' t'$4\si\minute$ Aktivierung', h(x) t'Fit'
 set output
-
+!epstopdf 4min.eps
 
 
 set output '8min.tex'
@@ -47,5 +47,5 @@ set fit logfile 'log8min.log'
 fit j(x) '8min.dat' via j,k,l
 p '8min.dat' t'$8\si\minute$ Aktivierung', j(x) t'Fit'
 set output
-
+!epstopdf 8min.eps
 
