@@ -222,15 +222,15 @@ Die Halbwertszeit $T$ ist definiert über $N(T)=\frac{1}{2}N_0$ und damit folgli
 
 \subsection{Silberisotope}
 Die beiden Isotope \chemical{^{107}Ag} und \chemical{^{109}Ag} sind stabil.
-Sie können jedoch durch Anregung mit einem Neutron in die Isotope \chemical{^{108}Ag} und \chemical{^{110}Ag} umgewand werden wobei ein Photon ausgesandt wird.
+Sie können jedoch durch Anregung mit einem Neutron in die Isotope \chemical{^{108}Ag} und \chemical{^{110}Ag} umgewandelt werden wobei ein Photon ausgesandt wird.
 Diese sind jedoch $\beta^-$-Strahler.
-Diese widerum kann in einem \textsc{Geiger-Müller}-Zählrohr gemessen werden.
+Diese wiederum kann in einem \textsc{Geiger-Müller}-Zählrohr gemessen werden.
 \begin{align*}
 	\text{\chemical{^{107}_{47}Ag+n \,\rightarrow\, ^{108}_{47}Ag}} + \gamma\\
 	\text{\chemical{^{109}_{47}Ag+n\,\rightarrow \,^{110}_{47}Ag}} + \gamma
 \end{align*}
 Die entstandenen Isotope sind jedoch beide instabile $\beta$-Strahler, welche Halbwertszeiten von $T_\text{\chemical{^{108}_{47}Ag}}=143\si\second$ und $T_\text{\chemical{^{110}_{47}Ag}}=24.6\si\second$ besitzen.
-
+Dadurch überlagern sich die zwei Zerfälle und in der Auswertung muss berücksichtigt werden, dass $\chemical{^{110}_{47}Ag}$
 
                                                                                                                                                                       
 \section{Durchführung}
@@ -253,12 +253,20 @@ In den beiden Versuchsräumen sollte nicht gegessen werden und nach der Durchfü
 \section{Auswertung}
 \label{sec:auswertung}
 
+Die natürliche Hintergrundstrahlung, welche durch radioaktive Zerfälle in der Umgebung oder durch kosmische Strahlung hervorgerufen wird, ist abhängig von dem Ort der Beobachtung.
+Insbesondere steigert der Einbau bestimmter Baumaterialien in Hauswänden die Radon-Konzentration, wodurch die Nullrate gesteigert wird.
+Daher ist es wichtig für Messungen, zunächst zu vermessen, wie hoch diese ist.
+Dafür wird über einen Zeitraum von ca. 5min ohne die Anwesenheit einer Probe einfach gemessen, wie viele Zerfälle stattfinden.
+In Abb. \ref{fig:null} ist dies getan mit einer Mittelwertslinie aller Werte.
+
 \begin{figure}[h]
 	\centering
 	\input{null}
 	\caption{Nullrate}
 	\label{fig:null}
 \end{figure}
+
+\subsection{Halbwertszeit}
 
 \begin{figure}[h]
 \centering
@@ -289,16 +297,6 @@ In den beiden Versuchsräumen sollte nicht gegessen werden und nach der Durchfü
 \end{figure}
 
 
-\begin{table}
-\centering
-\begin{tabular}{|c|c|c|}
-\hline
-
-
-\end{tabular}
-\caption{<+Caption text+>}
-\label{tab:<+label+>}
-\end{table}<++>
 
 \section{Diskussion}
 \label{sec:diskussion}
