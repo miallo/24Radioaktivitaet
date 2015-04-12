@@ -4,19 +4,22 @@ set output 'plot1.tex'
 set title 'Übersicht'
 set xlabel 'Zeit $t$ [s]'
 set ylabel 'Anzahl der Zerfälle pro Sekunde $N$'
-set xrange [0:250]
-set yrange [-10:150]
-N_a1=exp(5)
-N_b1=exp(2.4)
-N_a2=exp(5.2)
-N_b2=exp(2.7)
-N_a4=exp(5.2)
-N_b4=exp(3.3)
-N_a8=exp(5.4)
-N_b8=exp(3.4)
-N_0=0.64
-T_a=log(2)/0.023
-T_b=log(2)/0.0042
+
+N_a1=148
+N_a2=181
+N_a4=191
+N_a8=221
+
+N_b1=7
+N_b2=10
+N_b4=17
+N_b8=20
+
+N_0=0.378462
+
+T_a=24
+T_b=148
+
 g(x)=N_a1*exp(-log(2)/T_a*x)
 g_(x)=N_b1*exp(-log(2)/T_b*x)
 h_(x)=N_b2*exp(-log(2)/T_b*x)
@@ -29,8 +32,11 @@ k(x)=N_0
 max(x, y) = (x > y ? x : y)
 f(x,y)=(y==0) ? N_a1*exp(-log(2)/T_a*x)+N_b1*exp(-log(2)/T_b*x)+N_0 : (y==1) ? N_a2*exp(-log(2)/T_a*x)+N_b2*exp(-log(2)/T_b*x)+N_0 : (y==2) ? N_a4*exp(-log(2)/T_a*x)+N_b4*exp(-log(2)/T_b*x)+N_0 : (y==3) ? N_a8*exp(-log(2)/T_a*x)+N_b8*exp(-log(2)/T_b*x)+N_0 : N_0
 fit f(x,y) 'data.dat' using (($1)-2.5):-2:(($2)/5):(max(0.5,sqrt($2))) via N_a1,N_a2,N_a4,N_a8,N_b1,N_b2,N_b4,N_b8,T_a,T_b,N_0
+set xrange [0:250]
+set yrange [-10:150]
 p g(x)+g_(x)+k(x) lc 1 t 'fit 1 min',h(x)+h_(x)+k(x) lc 2 t 'fit 2 min',i(x)+i_(x)+k(x) lc 3 t 'fit 4 min',j(x)+j_(x)+k(x) lc 4 t 'fit 8 min',k(x) lc 5 t 'fit Nullrate','1min.dat' using (($1)-2.5):(($2)/5):(max(0.5,sqrt($2))) w e lc 1 t 'Messwerte 1min','2min.dat' using (($1)-2.5):(($2)/5):(max(0.5,sqrt($2))) w e lc 2 t 'Messwerte 2min','4min.dat' using (($1)-2.5):(($2)/5):(max(0.5,sqrt($2))) w e lc 3 t 'Messwerte 4 min','8min.dat' using (($1)-2.5):(($2)/5):(max(0.5,sqrt($2))) w e lc 4 t 'Messwerte 8 min','Nullrate_ohne_Platte.dat' using (($1)-2.5):(($2)/5):(max(0.5,sqrt($2))) w e lc 5 t 'Messwerte Nullrate'
 set output
+!epstopdf plot1.eps
 set output 'plot1min.tex'
 set title '1 Minute Aktivierungszeit'
 set xlabel 'Zeit $t$ [s]'

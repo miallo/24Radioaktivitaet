@@ -49,3 +49,10 @@ p '8min.dat' t'$8\si\minute$ Aktivierung', j(x) t'Fit'
 set output
 !epstopdf 8min.eps
 
+set output 'null.tex'
+set yrange [0:*]
+k(x)=m
+fit k(x) 'Nullrate_ohne_Platte.dat' via m
+p 'Nullrate_ohne_Platte.dat' t'Nullrate', k(x) t'Fit'
+set output
+!epstopdf null.eps
