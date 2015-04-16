@@ -71,25 +71,33 @@
       \expandafter\def\csname LT8\endcsname{\color{black}}%
     \fi
   \fi
-  \setlength{\unitlength}{0.0500bp}%
-  \begin{picture}(7200.00,5040.00)%
+    \setlength{\unitlength}{0.0500bp}%
+    \ifx\gptboxheight\undefined%
+      \newlength{\gptboxheight}%
+      \newlength{\gptboxwidth}%
+      \newsavebox{\gptboxtext}%
+    \fi%
+    \setlength{\fboxrule}{0.5pt}%
+    \setlength{\fboxsep}{1pt}%
+\begin{picture}(7200.00,5040.00)%
     \gplgaddtomacro\gplbacktext{%
       \csname LTb\endcsname%
-      \put(946,704){\makebox(0,0)[r]{\strut{} 1}}%
-      \put(946,2393){\makebox(0,0)[r]{\strut{} 10}}%
-      \put(946,4082){\makebox(0,0)[r]{\strut{} 100}}%
-      \put(1078,484){\makebox(0,0){\strut{} 0}}%
-      \put(2032,484){\makebox(0,0){\strut{} 50}}%
-      \put(2986,484){\makebox(0,0){\strut{} 100}}%
-      \put(3941,484){\makebox(0,0){\strut{} 150}}%
-      \put(4895,484){\makebox(0,0){\strut{} 200}}%
-      \put(5849,484){\makebox(0,0){\strut{} 250}}%
-      \put(6803,484){\makebox(0,0){\strut{} 300}}%
-      \put(176,2541){\rotatebox{-270}{\makebox(0,0){\strut{}Anzahl der Zerfälle pro Sekunde $N$}}}%
-      \put(3940,154){\makebox(0,0){\strut{}Zeit $t$ [s]}}%
-      \put(3940,4709){\makebox(0,0){\strut{}4 Minuten Aktivierungszeit}}%
+      \put(814,704){\makebox(0,0)[r]{\strut{}$1$}}%
+      \put(814,2393){\makebox(0,0)[r]{\strut{}$10$}}%
+      \put(814,4082){\makebox(0,0)[r]{\strut{}$100$}}%
+      \put(946,484){\makebox(0,0){\strut{}$0$}}%
+      \put(1922,484){\makebox(0,0){\strut{}$50$}}%
+      \put(2898,484){\makebox(0,0){\strut{}$100$}}%
+      \put(3875,484){\makebox(0,0){\strut{}$150$}}%
+      \put(4851,484){\makebox(0,0){\strut{}$200$}}%
+      \put(5827,484){\makebox(0,0){\strut{}$250$}}%
+      \put(6803,484){\makebox(0,0){\strut{}$300$}}%
     }%
     \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(176,2541){\rotatebox{-270}{\makebox(0,0){\strut{}Anzahl der Zerfälle pro Sekunde $N$}}}%
+      \put(3874,154){\makebox(0,0){\strut{}Zeit $t$ [s]}}%
+      \put(3874,4709){\makebox(0,0){\strut{}4 Minuten Aktivierungszeit}}%
       \csname LTb\endcsname%
       \put(5816,4206){\makebox(0,0)[r]{\strut{}Isotop A}}%
       \csname LTb\endcsname%

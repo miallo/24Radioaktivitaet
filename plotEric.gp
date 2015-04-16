@@ -83,6 +83,7 @@ set xrange [0:300]
 set yrange [1:150]
 p g(x)+k(x) t 'Isotop A',g_(x)+k(x) t 'Isotop B',g(x)+g_(x)+k(x) t 'Summe',k(x) t 'Nullrate','1min.dat' using (($1)-2.5):(($2)/5):(max(0.5,sqrt($2))) w e t 'Messwerte 1 min' lc 'black'
 set output
+!epstopdf plot1minlog.eps
 set output 'plot2minlog.tex'
 set title '2 Minuten Aktivierungszeit'
 set xlabel 'Zeit $t$ [s]'
@@ -91,6 +92,7 @@ set xrange [0:300]
 set yrange [1:150]
 p h(x)+k(x) t 'Isotop A',h_(x)+k(x) t 'Isotop B',h(x)+h_(x)+k(x) t 'Summe',k(x) t 'Nullrate','2min.dat' using (($1)-2.5):(($2)/5):(max(0.5,sqrt($2))) w e t 'Messwerte 2 min' lc 'black'
 set output
+!epstopdf plot2minlog.eps
 set output 'plot4minlog.tex'
 set title '4 Minuten Aktivierungszeit'
 set xlabel 'Zeit $t$ [s]'
@@ -99,6 +101,7 @@ set xrange [0:300]
 set yrange [1:150]
 p i(x)+k(x) t 'Isotop A',i_(x)+k(x) t 'Isotop B',i(x)+i_(x)+k(x) t 'Summe',k(x) t 'Nullrate','4min.dat' using (($1)-2.5):(($2)/5):(max(0.5,sqrt($2))) w e t 'Messwerte 4 min' lc 'black'
 set output
+!epstopdf plot4minlog.eps
 set output 'plot8minlog.tex'
 set title '8 Minuten Aktivierungszeit'
 set xlabel 'Zeit $t$ [s]'
@@ -107,6 +110,7 @@ set xrange [0:300]
 set yrange [1:150]
 p j(x)+k(x) t 'Isotop A',j_(x)+k(x) t 'Isotop B',j(x)+j_(x)+k(x) t 'Summe',k(x) t 'Nullrate','8min.dat' using (($1)-2.5):(($2)/5):(max(0.5,sqrt($2))) w e t 'Messwerte 8 min' lc 'black'
 set output
+!epstopdf plot8minlog.eps
 #unset logscale
 #set autoscale
 #Q=200
